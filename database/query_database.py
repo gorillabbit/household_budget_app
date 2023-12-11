@@ -6,7 +6,7 @@ def query_database(db_path):
     cursor = conn.cursor()
 
     # 確認したいテーブル名のリスト
-    tables = ['Users', 'Transactions', 'Categories', 'Budgets', 'RecurringTransactions']
+    tables = ['Users', 'Transactions', 'Categories', 'Budgets', 'RecurringTransactions', 'Accounts']
 
     for table in tables:
         print(f"Table: {table}")

@@ -71,6 +71,19 @@ def create_database(db_path):
     )
     ''')
 
+    # Accounts テーブルの作成
+    cursor.execute('''
+    CREATE TABLE IF NOT EXISTS Accounts (
+    AccountID INTEGER PRIMARY KEY AUTOINCREMENT,
+    UserID INTEGER,
+    AccountName TEXT NOT NULL,
+    AccountType TEXT,
+    Balance REAL NOT NULL,
+    Currency TEXT,
+    FOREIGN KEY (UserID) REFERENCES Users(UserID)
+    )
+    ''')
+    
     # コミットして変更を保存
     conn.commit()
 
