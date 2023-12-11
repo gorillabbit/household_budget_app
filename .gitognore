@@ -3,9 +3,6 @@ __pycache__/
 *.py[cod]
 *.pyc
 
-# 特定のサブディレクトリ内の __pycache__
-\ui\__pycache__
-
 # パッケージングディレクトリ
 build/
 dist/
