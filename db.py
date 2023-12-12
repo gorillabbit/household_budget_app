@@ -6,10 +6,14 @@ class Database:
         self.conn = sqlite3.connect(db_path)
         self.cursor = self.conn.cursor()
 
-    def create_user(self, username, email, password_hash, date_created):
+    def get_all_tables(self, table):
+        self.cursor.execute(f"SELECT * FROM {table}")
+        return self.cursor.fetchall()
+
+    def create_user(self, username, email, password_hash):
         """ 新しいユーザーを作成する """
-        sql = '''INSERT INTO Users (UserName, Email, PasswordHash, DateCreated) VALUES (?, ?, ?, ?)'''
-        self.cursor.execute(sql, (username, email, password_hash, date_created))
+        sql = '''INSERT INTO Users (UserName, Email, PasswordHash) VALUES (?, ?, ?)'''
+        self.cursor.execute(sql, (username, email, password_hash))
         self.conn.commit()
 
     def add_transaction(self, user_id, type, amount, category_id, date, description):
@@ -24,7 +28,7 @@ class Database:
         self.cursor.execute(sql, (user_id,))
         return self.cursor.fetchall()
 
-    def create_account(self, user_id, account_name, account_type, balance, currency):
+    def create_account(self, user_id, account_name, account_type=None, balance=0, currency='JPY'):
         """ 新しい口座を作成する """
         sql = '''INSERT INTO Accounts (UserID, AccountName, AccountType, Balance, Currency) VALUES (?, ?, ?, ?, ?)'''
         self.cursor.execute(sql, (user_id, account_name, account_type, balance, currency))
