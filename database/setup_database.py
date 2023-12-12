@@ -12,7 +12,7 @@ def create_database(db_path):
         UserName TEXT NOT NULL,
         Email TEXT NOT NULL,
         PasswordHash TEXT NOT NULL,
-        DateCreated TEXT NOT NULL
+        DateCreated TEXT DEFAULT CURRENT_TIMESTAMP
     )
     ''')
 
