@@ -34,3 +34,4 @@ env/
 # その他の配置設定ファイル
 /.vscode/
 /.idea/
+ui/__pycache__/main_window.cpython-311.pyc
