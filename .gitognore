@@ -1,0 +1,36 @@
+# バイトコードファイル
+__pycache__/
+*.py[cod]
+*.pyc
+
+# パッケージングディレクトリ
+build/
+dist/
+*.egg-info/
+*.egg
+
+# エディタの設定やバックアップファイル
+*.swp
+*~
+.*.swp
+.*.swo
+
+# OS生成ファイル
+.DS_Store
+Thumbs.db
+
+# バーチャル環境
+venv/
+env/
+*.env
+
+# データベースファイル
+*.db
+*.sqlite
+
+# ログファイル
+*.log
+
+# その他の配置設定ファイル
+/.vscode/
+/.idea/
